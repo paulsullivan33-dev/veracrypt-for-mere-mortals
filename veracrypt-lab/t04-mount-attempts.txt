@@ -1,0 +1,13 @@
+$ veracrypt --text --non-interactive -p <WRONG password> vault.hc mnt/
+Error: Operation failed due to one or more of the following:
+ - Incorrect password.
+ - Incorrect Volume PIM number.
+ - Incorrect PRF (hash).
+ - Not a valid volume.
+ - Volume uses an old algorithm that has been removed.
+ - TrueCrypt format volumes are no longer supported.
+exit=1
+
+$ veracrypt --text --non-interactive -p <correct password> vault.hc mnt/
+Error: fuse: device not found, try 'modprobe fuse' first
+exit=1

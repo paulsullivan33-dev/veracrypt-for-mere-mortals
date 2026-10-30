@@ -1,0 +1,30 @@
+site_name: VeraCrypt for Mere Mortals
+site_description: Disk encryption you control. Creating encrypted containers that mount as drives, proving passwords against the volume itself, changing passwords and PIMs, keyfiles, hidden volumes and header backups, and travelling with a container between machines, with the limits stated plainly.
+site_url: https://paulsullivan33-dev.github.io/veracrypt-for-mere-mortals/
+copyright: 'Part of <a href="https://paulsullivan33-dev.github.io/mere-mortals/">For Mere Mortals</a> · Text CC BY 4.0, code MIT'
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What VeraCrypt Is: what-veracrypt-is.md
+  - The Moving Parts: the-moving-parts.md
+  - What It Protects, and What It Doesn't: threat-model.md
+  - Installing VeraCrypt: installing-veracrypt.md
+  - Your First Volume: your-first-volume.md
+  - Mounting and Dismounting: mounting-and-dismounting.md
+  - Hidden Volumes and Plausible Deniability: hidden-volumes.md
+  - PIM — the Unlock-Cost Knob: pim.md
+  - Keyfiles: keyfiles.md
+  - Changing Passwords and Header Backups: changing-passwords-and-header-backups.md
+  - Travelling with a Container: travelling-with-a-container.md
+  - Performance and Hardware Acceleration: performance.md
+  - Recipes: recipes.md
+  - The Neighbours: the-neighbours.md
+  - Limits: limits.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md

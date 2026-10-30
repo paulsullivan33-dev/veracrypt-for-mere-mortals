@@ -1,0 +1,29 @@
+$ mount outer.hc with the OUTER password
+Error: fuse: device not found, try 'modprobe fuse' first
+
+real	0m1.946s
+user	0m0.026s
+sys	0m0.008s
+exit=1
+
+$ mount outer.hc with the HIDDEN password
+Error: fuse: device not found, try 'modprobe fuse' first
+
+real	0m27.708s
+user	0m0.024s
+sys	0m0.011s
+exit=1
+
+$ mount outer.hc with a junk password
+Error: Operation failed due to one or more of the following:
+ - Incorrect password.
+ - Incorrect Volume PIM number.
+ - Incorrect PRF (hash).
+ - Not a valid volume.
+ - Volume uses an old algorithm that has been removed.
+ - TrueCrypt format volumes are no longer supported.
+
+real	0m53.820s
+user	0m0.026s
+sys	0m0.010s
+exit=1

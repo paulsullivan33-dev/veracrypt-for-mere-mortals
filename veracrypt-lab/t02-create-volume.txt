@@ -1,0 +1,39 @@
+$ veracrypt --text --non-interactive --create vault.hc --size 20971520 --volume-type normal --encryption AES --hash SHA-512 --filesystem FAT --password <lab password> --pim 0 --random-source /dev/urandom
+
+
+Done:   0.000%  Speed:            Left:          
+Done: 100.000%  Speed: 7.9 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 7.6 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 7.3 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 7.0 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 6.8 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 6.5 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 6.3 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 6.1 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 5.9 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 5.7 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 5.5 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 5.4 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 5.2 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 5.1 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 5.0 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 4.9 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 4.7 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 4.6 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 4.5 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 4.4 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 4.3 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 4.2 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 4.1 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 4.1 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 4.0 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 3.9 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 3.8 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 3.8 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 3.7 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 3.6 MiB/s  Left: 0 s         
+Done: 100.000%  Speed: 3.6 MiB/s  Left: 0 s         
+
+The VeraCrypt volume has been successfully created.
+exit=0
+-rw------- 1 root root 20971520 Oct 30 21:35 vault.hc

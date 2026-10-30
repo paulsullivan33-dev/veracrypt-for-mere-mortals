@@ -1,0 +1,21 @@
+$ gpg --verify veracrypt-1.26.30-sha256sum.txt.sig veracrypt-1.26.30-sha256sum.txt
+gpg: Signature made Sun Oct 25 14:35:14 2026 UTC
+gpg:                using RSA key 5069A233D55A0EEB174A5FC3821ACD02680D16DE
+gpg: Good signature from "VeraCrypt Team <veracrypt@amcrypto.jp>" [unknown]
+gpg:                 aka "VeraCrypt Team (2018 - Supersedes Key ID=0x54DDD393) <veracrypt@idrix.fr>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 5069 A233 D55A 0EEB 174A  5FC3 821A CD02 680D 16DE
+
+$ gpg --verify veracrypt-console-1.26.30-Ubuntu-24.04-amd64.deb.sig veracrypt-console-1.26.30-Ubuntu-24.04-amd64.deb
+gpg: Signature made Sun Oct 25 12:01:24 2026 UTC
+gpg:                using RSA key 5069A233D55A0EEB174A5FC3821ACD02680D16DE
+gpg: Good signature from "VeraCrypt Team <veracrypt@amcrypto.jp>" [unknown]
+gpg:                 aka "VeraCrypt Team (2018 - Supersedes Key ID=0x54DDD393) <veracrypt@idrix.fr>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 5069 A233 D55A 0EEB 174A  5FC3 821A CD02 680D 16DE
+
+$ sha256sum -c (entry for our .deb from the signed sums file)
+830462C50F3DAED38BA9B206CF2804E8134305BB8CD4E1D6BEBA160E93EF2FBD  veracrypt-console-1.26.30-Ubuntu-24.04-amd64.deb
+veracrypt-console-1.26.30-Ubuntu-24.04-amd64.deb: OK

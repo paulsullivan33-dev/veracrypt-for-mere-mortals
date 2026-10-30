@@ -1,0 +1,11 @@
+$ veracrypt --text --non-interactive --create outer.hc --size 31457280 --volume-type normal --encryption AES --hash SHA-512 --filesystem none --password <outer password> --random-source /dev/urandom
+
+The VeraCrypt volume has been successfully created.
+-rw------- 1 root root 31457280 Oct 30 21:44 outer.hc
+
+$ veracrypt --text --non-interactive --create outer.hc --volume-type hidden --size 10485760 --encryption AES --hash SHA-512 --filesystem FAT --password <hidden password> --random-source /dev/urandom
+
+The hidden VeraCrypt volume has been successfully created and is ready for use. If all the instructions have been followed and if the precautions and requirements listed in the section "Security Requirements and Precautions Pertaining to Hidden Volumes" in the VeraCrypt User's Guide are followed, it should be impossible to prove that the hidden volume exists, even when the outer volume is mounted.
+
+WARNING: IF YOU DO NOT PROTECT THE HIDDEN VOLUME (FOR INFORMATION ON HOW TO DO SO, REFER TO THE SECTION "PROTECTION OF HIDDEN VOLUMES AGAINST DAMAGE" IN THE VERACRYPT USER'S GUIDE), DO NOT WRITE TO THE OUTER VOLUME. OTHERWISE, YOU MAY OVERWRITE AND DAMAGE THE HIDDEN VOLUME!
+exit=0

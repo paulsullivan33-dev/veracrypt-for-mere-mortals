@@ -1,0 +1,26 @@
+$ veracrypt --text --backup-headers vault.hc   (stdin: password, PIM, no keyfile, no hidden, yes, filename, 320+ random characters)
+For security reasons, you will have to enter the correct password (and/or supply the correct keyfiles) for the volume.
+
+Note: If the volume contains a hidden volume, you will have to enter the correct password (and/or supply the correct keyfiles) for the outer volume first. Afterwards, if you choose to back up the header of the hidden volume, you will have to enter the correct password (and/or supply the correct keyfiles) for the hidden volume.
+
+Enter password for the normal/outer volume: 
+Enter PIM for the normal/outer volume: 
+Enter keyfile [none]: 
+Does the volume contain a hidden volume? (y=Yes/n=No) [No]: 
+Are you sure you want to create volume header backup for /home/hatch/workspace/veracrypt-labwork/vault.hc?
+
+After you click Yes, you will prompted for a filename for the header backup.
+
+Note: Both the standard and the hidden volume headers will be re-encrypted using a new salt and stored in the backup file. If there is no hidden volume within this volume, the area reserved for the hidden volume header in the backup file will be filled with random data (to preserve plausible deniability). When restoring a volume header from the backup file, you will need to enter the correct password (and/or to supply the correct keyfiles) that was/were valid when the volume header backup was created. The password (and/or keyfiles) will also automatically determine the type of the volume header to restore, i.e. standard or hidden (note that VeraCrypt determines the type through the process of trial and error).
+ (y=Yes/n=No) [Yes]: 
+Enter filename: 
+Please type at least 320 randomly chosen characters and then press Enter:
+
+
+Volume header backup has been successfully created.
+
+IMPORTANT: Restoring the volume header using this backup will also restore the current volume password. Moreover, if keyfile(s) are/is necessary to mount the volume, the same keyfile(s) will be necessary to mount the volume again when the volume header is restored.
+
+WARNING: This volume header backup may be used to restore the header ONLY of this particular volume. If you use this header backup to restore a header of a different volume, you will be able to mount the volume, but you will NOT be able to decrypt any data stored in the volume (because you will change its master key).
+exit=0
+-rw------- 1 root root 131072 Oct 30 21:45 vault-header-backup

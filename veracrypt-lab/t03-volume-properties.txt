@@ -1,0 +1,7 @@
+$ veracrypt --text --non-interactive --volume-properties -p <correct password> vault.hc
+Error: No such volume is mounted.
+exit=1
+
+$ veracrypt --text --non-interactive --volume-properties -p <WRONG password> vault.hc
+Error: No such volume is mounted.
+exit=1

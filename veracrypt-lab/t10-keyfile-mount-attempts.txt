@@ -1,0 +1,21 @@
+$ mount keyvault.hc with password AND keyfile (both factors)
+Error: fuse: device not found, try 'modprobe fuse' first
+
+real	0m2.011s
+user	0m0.030s
+sys	0m0.006s
+exit=1
+
+$ mount keyvault.hc with the password but WITHOUT the keyfile
+Error: Operation failed due to one or more of the following:
+ - Incorrect password.
+ - Incorrect Volume PIM number.
+ - Incorrect PRF (hash).
+ - Not a valid volume.
+ - Volume uses an old algorithm that has been removed.
+ - TrueCrypt format volumes are no longer supported.
+
+real	0m49.482s
+user	0m0.028s
+sys	0m0.010s
+exit=1

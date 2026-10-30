@@ -1,0 +1,111 @@
+$ veracrypt --text --non-interactive -p <correct password> --pim 505 vault-copy.hc mnt/   (both headers destroyed)
+
+real	10m0.053s
+user	0m0.028s
+sys	0m0.008s
+exit=124
+
+$ veracrypt --text --restore-headers vault-copy.hc   (stdin answers: password, PIM, no keyfile, backup file path, yes)
+Please select the type of volume header backup you want to use:
+
+1) Restore the volume header from the backup embedded in the volume
+2) Restore the volume header from an external backup file
+
+Select: Select: Select: Select: Select: Select: exit=1
+
+$ veracrypt --text --restore-headers vault-copy.hc   (retry: menu choice 2 = external backup file, then path, password, PIM, no keyfile, yes)
+Please select the type of volume header backup you want to use:
+
+1) Restore the volume header from the backup embedded in the volume
+2) Restore the volume header from an external backup file
+
+Select: 
+
+Are you sure you want to restore volume header of /home/hatch/workspace/veracrypt-labwork/vault-copy.hc?
+
+WARNING: Restoring a volume header also restores the volume password that was valid when the backup was created. Moreover, if keyfile(s) were/was necessary to mount the volume when the backup was created, the same keyfile(s) will be necessary to mount the volume again after the volume header is restored.
+
+After you click Yes, you will select the header backup file. (y=Yes/n=No) [Yes]: 
+
+Are you sure you want to restore volume header of /home/hatch/workspace/veracrypt-labwork/vault-copy.hc?
+
+WARNING: Restoring a volume header also restores the volume password that was valid when the backup was created. Moreover, if keyfile(s) were/was necessary to mount the volume when the backup was created, the same keyfile(s) will be necessary to mount the volume again after the volume header is restored.
+
+After you click Yes, you will select the header backup file. (y=Yes/n=No) [Yes]: 
+
+Are you sure you want to restore volume header of /home/hatch/workspace/veracrypt-labwork/vault-copy.hc?
+
+WARNING: Restoring a volume header also restores the volume password that was valid when the backup was created. Moreover, if keyfile(s) were/was necessary to mount the volume when the backup was created, the same keyfile(s) will be necessary to mount the volume again after the volume header is restored.
+
+After you click Yes, you will select the header backup file. (y=Yes/n=No) [Yes]: 
+
+Are you sure you want to restore volume header of /home/hatch/workspace/veracrypt-labwork/vault-copy.hc?
+
+WARNING: Restoring a volume header also restores the volume password that was valid when the backup was created. Moreover, if keyfile(s) were/was necessary to mount the volume when the backup was created, the same keyfile(s) will be necessary to mount the volume again after the volume header is restored.
+
+After you click Yes, you will select the header backup file. (y=Yes/n=No) [Yes]: 
+Enter filename: Error: No such file or directory:
+y
+
+VeraCrypt::File::Open:348
+exit=1
+
+$ veracrypt --text --restore-headers vault-copy.hc   (retry 2: 2, yes, backup file path, password, PIM, no keyfile)
+Please select the type of volume header backup you want to use:
+
+1) Restore the volume header from the backup embedded in the volume
+2) Restore the volume header from an external backup file
+
+Select: 
+
+Are you sure you want to restore volume header of /home/hatch/workspace/veracrypt-labwork/vault-copy.hc?
+
+WARNING: Restoring a volume header also restores the volume password that was valid when the backup was created. Moreover, if keyfile(s) were/was necessary to mount the volume when the backup was created, the same keyfile(s) will be necessary to mount the volume again after the volume header is restored.
+
+After you click Yes, you will select the header backup file. (y=Yes/n=No) [Yes]: 
+Enter filename: 
+Enter password for the header stored in backup file: 
+Enter PIM: 
+Enter keyfile [none]: 
+Please type at least 320 randomly chosen characters and then press Enter:
+exit=1
+
+$ veracrypt --text --restore-headers vault-copy.hc   (retry 3: same answers, plus 320+ random characters at the entropy prompt)
+Please select the type of volume header backup you want to use:
+
+1) Restore the volume header from the backup embedded in the volume
+2) Restore the volume header from an external backup file
+
+Select: 
+
+Are you sure you want to restore volume header of /home/hatch/workspace/veracrypt-labwork/vault-copy.hc?
+
+WARNING: Restoring a volume header also restores the volume password that was valid when the backup was created. Moreover, if keyfile(s) were/was necessary to mount the volume when the backup was created, the same keyfile(s) will be necessary to mount the volume again after the volume header is restored.
+
+After you click Yes, you will select the header backup file. (y=Yes/n=No) [Yes]: 
+Enter filename: 
+Enter password for the header stored in backup file: 
+Enter PIM: 
+Enter keyfile [none]: 
+Please type at least 320 randomly chosen characters and then press Enter:
+
+
+The volume header has been successfully restored.
+
+IMPORTANT: Please note that an old password may have been restored as well. Moreover, if keyfile(s) were/was necessary to mount the volume when the backup was created, the same keyfile(s) are now necessary to mount the volume again.
+exit=0
+
+$ mount attempt on the restored vault-copy.hc with the correct password and PIM 505
+Error: fuse: device not found, try 'modprobe fuse' first
+
+real	0m1.960s
+user	0m0.025s
+sys	0m0.009s
+exit=1
+$ cp vault.hc vault-copy2.hc; zero the first and last 128 KiB (both headers) of vault-copy2.hc
+$ mount attempt on vault-copy2.hc with the correct password and PIM 505 (uncontended rerun)
+
+real	10m0.060s
+user	0m0.023s
+sys	0m0.016s
+exit=124

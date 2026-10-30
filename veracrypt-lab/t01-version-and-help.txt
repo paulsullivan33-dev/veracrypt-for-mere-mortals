@@ -1,0 +1,180 @@
+$ veracrypt --text --version
+VeraCrypt 1.26.30
+
+$ veracrypt --text --help
+Usage: veracrypt [--auto-mount <str>] [--backup-headers] [--background-task] [-C] [-c] [--create-keyfile] [--delete-token-keyfiles] [-d] [-u] [--emergency-unmount] [--display-password] [--encryption <str>] [--explore] [--export-token-keyfile] [--filesystem <str>] [-f] [--fs-options <str>] [--hash <str>] [-h] [--import-token-keyfiles] [-k <str>] [-l] [--list-token-keyfiles] [--list-securitytoken-keyfiles] [--list-emvtoken-keyfiles] [--load-preferences] [--mount] [-m <str>] [--new-hash <str>] [--new-keyfiles <str>] [--new-password <str>] [--new-pim <str>] [--non-interactive] [--stdin] [-p <str>] [--pim <str>] [--protect-hidden <str>] [--protection-hash <str>] [--protection-keyfiles <str>] [--protection-password <str>] [--protection-pim <str>] [--random-source <str>] [--restore-headers] [--save-preferences] [--quick] [--size <str>] [--slot <str>] [--test] [-t] [--token-lib <str>] [--token-pin <str>] [-v] [--version] [--volume-properties] [--volume-type <str>] [--no-size-check] [--legacy-password-maxlength] [--use-dummy-sudo-password] [--allow-insecure-mount] [Volume path] [Mount point]
+  --auto-mount=<str>           	Auto mount device-hosted/favorite volumes
+  --backup-headers             	Backup volume headers
+  --background-task            	Start Background Task
+  -C, --change                 	Change password or keyfiles
+  -c, --create                 	Create new volume
+  --create-keyfile             	Create new keyfile
+  --delete-token-keyfiles      	Delete security token keyfiles
+  -d, --dismount               	Unmount volume (deprecated: use 'unmount')
+  -u, --unmount                	Unmount volume
+  --emergency-unmount          	Attempt emergency cleanup if normal Linux unmount fails
+  --display-password           	Display password while typing
+  --encryption=<str>           	Encryption algorithm
+  --explore                    	Open explorer window for mounted volume
+  --export-token-keyfile       	Export keyfile from token
+  --filesystem=<str>           	Filesystem type
+  -f, --force                  	Force mount/unmount/overwrite
+  --fs-options=<str>           	Filesystem mount options
+  --hash=<str>                 	Header key derivation algorithm
+  -h, --help                   	Display detailed command line help
+  --import-token-keyfiles      	Import keyfiles to security token
+  -k, --keyfiles=<str>         	Keyfiles
+  -l, --list                   	List mounted volumes
+  --list-token-keyfiles        	List token keyfiles
+  --list-securitytoken-keyfiles	List security token keyfiles
+  --list-emvtoken-keyfiles     	List EMV token keyfiles
+  --load-preferences           	Load user preferences
+  --mount                      	Mount volume interactively
+  -m, --mount-options=<str>    	VeraCrypt volume mount options
+  --new-hash=<str>             	New header key derivation algorithm
+  --new-keyfiles=<str>         	New keyfiles
+  --new-password=<str>         	New password
+  --new-pim=<str>              	New PIM
+  --non-interactive            	Do not interact with user
+  --stdin                      	Read password from standard input
+  -p, --password=<str>         	Password
+  --pim=<str>                  	PIM
+  --protect-hidden=<str>       	Protect hidden volume
+  --protection-hash=<str>      	Header key derivation algorithm for protected hidden volume
+  --protection-keyfiles=<str>  	Keyfiles for protected hidden volume
+  --protection-password=<str>  	Password for protected hidden volume
+  --protection-pim=<str>       	PIM for protected hidden volume
+  --random-source=<str>        	Use file as source of random data
+  --restore-headers            	Restore volume headers
+  --save-preferences           	Save user preferences
+  --quick                      	Enable quick format
+  --size=<str>                 	Size in bytes
+  --slot=<str>                 	Volume slot number
+  --test                       	Test internal algorithms
+  -t, --text                   	Use text user interface
+  --token-lib=<str>            	Security token library
+  --token-pin=<str>            	Security token PIN
+  -v, --verbose                	Enable verbose output
+  --version                    	Display version information
+  --volume-properties          	Display volume properties
+  --volume-type=<str>          	Volume type
+  --no-size-check              	Disable check of container size against disk free space.
+  --legacy-password-maxlength  	Use legacy maximum password length (64 UTF-8 bytes)
+  --use-dummy-sudo-password    	Use dummy password in sudo to detect if it is already authenticated
+  --allow-insecure-mount       	Allow mounting volumes on mount points that are in the user's PATH
+
+
+Synopsis:
+
+veracrypt [OPTIONS] COMMAND
+veracrypt [OPTIONS] VOLUME_PATH [MOUNT_DIRECTORY]
+
+
+Commands:
+
+--auto-mount=devices|favorites
+ Auto mount device-hosted or favorite volumes.
+
+--backup-headers [VOLUME_PATH]
+ Backup volume headers to a file. All required options are requested from the
+ user.
+
+-c, --create [VOLUME_PATH]
+ Create a new volume. Most options are requested from the user if not specified
+ on command line. See also options --encryption, -k, --filesystem, --hash, -p,
+ --random-source, --quick, --size, --volume-type. Note that passing some of the
+ options may affect security of the volume (see option -p for more information).
+
+ Inexperienced users should use the graphical user interface to create a hidden
+ volume. When using the text user interface, the following procedure must be
+ followed to create a hidden volume:
+  1) Create an outer volume with no filesystem and without --quick.
+  2) Create a hidden volume within the outer volume.
+  3) Mount the outer volume using hidden volume protection.
+  4) Create a filesystem on the virtual device of the outer volume.
+  5) Mount the new filesystem and fill it with data.
+  6) Unmount the outer volume.
+  If at any step the hidden volume protection is triggered, start again from 1).
+
+--create-keyfile [FILE_PATH]
+ Create a new keyfile containing pseudo-random data.
+
+-C, --change [VOLUME_PATH]
+ Change a password and/or keyfile(s) of a volume. Most options are requested
+ from the user if not specified on command line. KDF hash
+ algorithm can be changed with option --hash. See also options -k,
+ --new-keyfiles, --new-password, -p, --random-source.
+
+-u, --unmount [MOUNTED_VOLUME]
+ Unmount a mounted volume. If MOUNTED_VOLUME is not specified, all
+ volumes are unmounted. See below for description of MOUNTED_VOLUME.
+
+--delete-token-keyfiles
+ Delete keyfiles from security tokens. See also command --list-token-keyfiles.
+
+--export-token-keyfile
+ Export a keyfile from a token. See also command --list-token-keyfiles.
+
+--import-token-keyfiles
+ Import keyfiles to a security token. See also option --token-lib.
+
+-l, --list [MOUNTED_VOLUME]
+ Display a list of mounted volumes. If MOUNTED_VOLUME is not specified, all
+ volumes are listed. By default, the list contains only volume path, virtual
+ device, and mount point. A more detailed list can be enabled by verbose
+ output option (-v). See below for description of MOUNTED_VOLUME.
+
+--list-token-keyfiles
+ Display a list of all available token keyfiles. See also command
+ --import-token-keyfiles.
+
+--list-securitytoken-keyfiles
+ Display a list of all available security token keyfiles. See also command
+ --import-token-keyfiles.
+
+
+--list-emvtoken-keyfiles
+ Display a list of all available emv token keyfiles. See also command
+
+--mount [VOLUME_PATH]
+ Mount a volume. Volume path and other options are requested from the user
+ if not specified on command line.
+
+--restore-headers [VOLUME_PATH]
+ Restore volume headers from the embedded or an external backup. All required
+ options are requested from the user.
+
+--save-preferences
+ Save user preferences.
+
+--test
+ Test internal algorithms used in the process of encryption and decryption.
+
+--version
+ Display program version.
+
+--volume-properties [MOUNTED_VOLUME]
+ Display properties of a mounted volume. See below for description of
+ MOUNTED_VOLUME.
+
+MOUNTED_VOLUME:
+ Specifies a mounted volume. One of the following forms can be used:
+ 1) Path to the encrypted VeraCrypt volume.
+ 2) Mount directory of the volume's filesystem (if mounted).
+ 3) Slot number of the mounted volume (requires --slot).
+
+
+Options:
+
+--display-password
+ Display password characters while typing.
+
+--encryption=ENCRYPTION_ALGORITHM
+ Use specified encryption algorithm when creating a new volume. When cascading
+ algorithms, they must be separated by a dash. For example: AES-Twofish.
+
+--filesystem=TYPE
+ Filesystem type to mount. The TYPE argument is passed to mount(8) command
+ with option -t. Default type is 'auto'. When creating a new volume, this
+ option specifies the filesystem to be created on the new volume.
+ Filesystem type 'none' disables mo

@@ -1,0 +1,3 @@
+$ veracrypt --text --test   (internal algorithm self-tests; the console build has no benchmark switch)
+Self-tests of all algorithms passed
+exit=0
